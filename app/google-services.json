@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "398241721541",
+    "firebase_url": "https://scrapbook-365bb.firebaseio.com",
+    "project_id": "scrapbook-365bb",
+    "storage_bucket": "scrapbook-365bb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:398241721541:android:a1b2909d7854bf0e",
+        "android_client_info": {
+          "package_name": "com.example.scrapbook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "398241721541-31kpc1ag5vhf5k2niv8i7ecuaar1u6co.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7sv3PaioosZ6LXcFU6mR6qZhivXP_FEE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "398241721541-31kpc1ag5vhf5k2niv8i7ecuaar1u6co.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
