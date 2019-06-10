@@ -53,25 +53,24 @@
             android:id="@+id/profile_image"
             android:layout_width="130dp"
             android:layout_height="127dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="32dp"
             android:src="@drawable/person"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintHorizontal_weight="2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/toolbar" android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toStartOf="@+id/followers_text" app:layout_constraintHorizontal_bias="0.493"/>
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            android:layout_marginStart="35dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"/>
 
     <TextView
             android:id="@+id/posts_count_text"
             style="@style/profile_text_count"
             tools:text="50"
-            app:layout_constraintBottom_toTopOf="@+id/posts_text"
             app:layout_constraintEnd_toEndOf="@+id/posts_text"
-            app:layout_constraintTop_toBottomOf="@id/toolbar"
-            app:layout_constraintVertical_bias="1.0" app:layout_constraintHorizontal_bias="0.601"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintStart_toStartOf="@+id/posts_text"/>
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintHorizontal_bias="0.764" app:layout_constraintTop_toTopOf="@+id/followers_count_text"
+            app:layout_constraintStart_toStartOf="@+id/edit_profile_btn"/>
 
     <TextView
             android:id="@+id/posts_text"
@@ -79,60 +78,63 @@
             android:text="@string/posts"
             app:layout_editor_absoluteX="100dp"
             app:layout_editor_absoluteY="100dp"
-            android:layout_marginTop="104dp" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="48dp"
-            app:layout_constraintStart_toEndOf="@+id/followers_text" android:layout_marginStart="8dp"
-            app:layout_constraintHorizontal_bias="1.0"/>
+            app:layout_constraintEnd_toEndOf="@+id/edit_profile_btn" android:layout_marginEnd="12dp"
+            app:layout_constraintBottom_toBottomOf="@+id/followers_text"/>
 
     <TextView
             android:id="@+id/followers_count_text"
             style="@style/profile_text_count"
             tools:text="100"
-            app:layout_constraintEnd_toEndOf="@+id/followers_text"
-            app:layout_constraintStart_toStartOf="@+id/followers_text"
-            app:layout_constraintHorizontal_bias="0.484" android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/followers_text"/>
+            android:layout_marginTop="32dp" app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:layout_constraintStart_toEndOf="@+id/profile_image" android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/followers_text" android:layout_marginEnd="8dp"
+            app:layout_constraintHorizontal_bias="0.78"/>
 
     <TextView
             android:id="@+id/followers_text"
             style="@style/profile_text"
             android:text="@string/followers"
-
-            tools:layout_editor_absoluteX="219dp" android:layout_marginBottom="16dp"
-            app:layout_constraintBottom_toTopOf="@+id/following_count_text"/>
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/edit_profile_btn"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:layout_constraintVertical_bias="0.878"
+            app:layout_constraintStart_toEndOf="@+id/profile_image" android:layout_marginStart="32dp"
+            app:layout_constraintEnd_toEndOf="@+id/following_text"/>
 
     <TextView
             android:id="@+id/following_count_text"
             style="@style/profile_text_count"
             tools:text="200"
-            tools:layout_editor_absoluteY="143dp" app:layout_constraintStart_toStartOf="@+id/following_text"
-            app:layout_constraintEnd_toEndOf="@+id/following_text"/>
+            app:layout_constraintTop_toTopOf="@+id/edit_profile_btn"
+            app:layout_constraintStart_toEndOf="@+id/profile_image" android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/followers_text" android:layout_marginEnd="8dp"
+            app:layout_constraintHorizontal_bias="0.78"/>
 
     <TextView
             android:id="@+id/following_text"
             style="@style/profile_text"
             android:text="@string/following"
-            tools:layout_editor_absoluteX="219dp" android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/images_recycler" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/following_count_text" app:layout_constraintVertical_bias="0.0"/>
+            android:layout_marginTop="16dp" app:layout_constraintTop_toBottomOf="@+id/following_count_text"
+            app:layout_constraintBottom_toBottomOf="@+id/edit_profile_btn" app:layout_constraintVertical_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/profile_image"
+            android:layout_marginStart="32dp"/>
 
     <Button
             android:id="@+id/edit_profile_btn"
-            android:layout_width="59dp"
-            android:layout_height="52dp"
+            android:layout_width="63dp"
+            android:layout_height="56dp"
             android:background="@drawable/button_bg"
             android:minHeight="0dp"
             android:paddingBottom="4dp"
             android:text="@string/edit_profile"
             android:textAllCaps="false"
             android:textSize="14sp"
-            app:layout_constraintStart_toEndOf="@id/following_text"
             app:layout_constraintHorizontal_weight="5"
-            android:layout_marginStart="28dp" android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginBottom="32dp"
-            app:layout_constraintBottom_toTopOf="@+id/images_recycler" app:layout_constraintHorizontal_bias="0.0"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/posts_text"
-            app:layout_constraintVertical_bias="1.0"/>
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/profile_image"
+            android:layout_marginStart="60dp" app:layout_constraintHorizontal_bias="0.883"
+            android:layout_marginBottom="32dp" app:layout_constraintBottom_toTopOf="@+id/images_recycler"/>
 
     <android.support.v7.widget.RecyclerView
             android:id="@+id/images_recycler"
