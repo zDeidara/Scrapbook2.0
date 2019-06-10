@@ -22,11 +22,11 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                style="@style/toolbar_title"
-                android:text="@string/settings"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/back_image"
-                app:layout_constraintTop_toTopOf="parent" />
+                    style="@style/toolbar_title"
+                    android:text="@string/settings"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/back_image"
+                    app:layout_constraintTop_toTopOf="parent" android:layout_marginStart="120dp"/>
 
         </android.support.constraint.ConstraintLayout>
 

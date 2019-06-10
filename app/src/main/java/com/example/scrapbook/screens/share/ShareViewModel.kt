@@ -23,7 +23,7 @@ class ShareViewModel(private val feedPostsRepo: FeedPostsRepository,
                 Tasks.whenAll(
                         usersRepo.setUserImage(user.uid, downloadUrl!!),
                         feedPostsRepo.createFeedPost(user.uid, mkFeedPost(user, caption,
-                                downloadUrl.toString()))
+                            imageUri.toString()))
                 )
             }.addOnCompleteListener{
                 _shareCompletedEvent.call()

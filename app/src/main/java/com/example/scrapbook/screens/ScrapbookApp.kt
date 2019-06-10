@@ -9,7 +9,7 @@ import com.example.scrapbook.data.firebase.FirebaseUsersRepository
 import com.example.scrapbook.screens.notifications.NotificationsCreator
 import com.example.scrapbook.screens.search.SearchPostsCreator
 
-class InstagramApp : Application() {
+class ScrapbookApp : Application() {
     val usersRepo by lazy { FirebaseUsersRepository() }
     val feedPostsRepo by lazy { FirebaseFeedPostsRepository() }
     val notificationsRepo by lazy { FirebaseNotificationsRepository() }

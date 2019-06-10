@@ -20,7 +20,7 @@ class CameraHelper(private val activity: Activity) {
         if (intent.resolveActivity(activity.packageManager) != null) {
             val imageFile = createImageFile()
             imageUri = FileProvider.getUriForFile(activity,
-                    "com.alexbezhan.instagram.fileprovider",
+                    "com.example.scrapbook.fileprovider",
                     imageFile)
             intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri)
             activity.startActivityForResult(intent, REQUEST_CODE)

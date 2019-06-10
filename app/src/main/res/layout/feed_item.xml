@@ -5,12 +5,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/user_photo_image"
-        style="@style/icon"
-        android:src="@drawable/person"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+    <ImageView
+            android:id="@+id/user_photo_image"
+            style="@style/icon"
+            android:src="@drawable/person"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="8dp"
+            android:layout_marginStart="124dp"/>
 
     <TextView
         android:id="@+id/username_text"
@@ -34,41 +35,32 @@
     <ImageView
         android:id="@+id/post_image"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="550dp"
         android:scaleType="centerCrop"
         app:layout_constraintTop_toBottomOf="@id/user_photo_image"
         app:layout_constraintBottom_toTopOf="@id/like_image"
         android:src="@drawable/image_placeholder"/>
 
     <ImageView
-        android:id="@+id/like_image"
-        app:layout_constraintTop_toBottomOf="@id/post_image"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/likes_text"
-        android:layout_height="45dp"
-        android:layout_width="45dp"
-        android:padding="10dp"
-        android:src="@drawable/ic_likes_border"/>
+            android:id="@+id/like_image"
+            app:layout_constraintTop_toBottomOf="@id/post_image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/likes_text"
+            android:layout_height="50dp"
+            android:layout_width="50dp"
+            android:padding="10dp"
+            android:src="@drawable/ic_likes_border" android:layout_marginStart="16dp"/>
 
     <ImageView
-        android:id="@+id/comment_image"
-        app:layout_constraintStart_toEndOf="@id/like_image"
-        app:layout_constraintTop_toTopOf="@id/like_image"
-        app:layout_constraintBottom_toBottomOf="@id/like_image"
-        android:layout_height="45dp"
-        android:layout_width="45dp"
-        android:padding="10dp"
-        android:src="@drawable/ic_comments_border"/>
-
-    <ImageView
-        android:id="@+id/share_image"
-        app:layout_constraintStart_toEndOf="@id/comment_image"
-        app:layout_constraintTop_toTopOf="@id/like_image"
-        app:layout_constraintBottom_toBottomOf="@id/like_image"
-        android:layout_height="45dp"
-        android:layout_width="45dp"
-        android:padding="10dp"
-        android:src="@drawable/ic_share_border"/>
+            android:id="@+id/comment_image"
+            app:layout_constraintStart_toEndOf="@id/like_image"
+            app:layout_constraintTop_toTopOf="@id/like_image"
+            app:layout_constraintBottom_toBottomOf="@id/like_image"
+            android:layout_height="50dp"
+            android:layout_width="50dp"
+            android:padding="10dp"
+            android:src="@drawable/ic_comments_border" android:layout_marginStart="16dp"
+            app:layout_constraintVertical_bias="0.0"/>
 
     <TextView
         android:id="@+id/likes_text"

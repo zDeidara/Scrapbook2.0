@@ -23,12 +23,12 @@
                 app:layout_constraintTop_toTopOf="parent"/>
 
             <TextView
-                android:id="@+id/username_text"
-                style="@style/toolbar_title"
-                android:text="@string/share_to"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/back_image"
-                app:layout_constraintTop_toTopOf="parent" />
+                    android:id="@+id/username_text"
+                    style="@style/toolbar_title"
+                    android:text="@string/share_to"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/back_image"
+                    app:layout_constraintTop_toTopOf="parent" android:layout_marginStart="108dp"/>
 
             <TextView
                 android:id="@+id/share_text"

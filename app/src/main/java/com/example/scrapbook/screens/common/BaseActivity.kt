@@ -6,7 +6,7 @@ import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.example.scrapbook.screens.InstagramApp
+import com.example.scrapbook.screens.ScrapbookApp
 import com.example.scrapbook.screens.login.LoginActivity
 
 abstract class BaseActivity : AppCompatActivity() {
@@ -25,7 +25,7 @@ abstract class BaseActivity : AppCompatActivity() {
 
     inline fun <reified T : BaseViewModel> initViewModel(): T =
             ViewModelProviders.of(this, ViewModelFactory(
-                    application as InstagramApp,
+                    application as ScrapbookApp,
                     commonViewModel,
                     commonViewModel)).get(T::class.java)
 

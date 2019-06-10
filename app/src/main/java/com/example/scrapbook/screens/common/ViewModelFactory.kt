@@ -2,7 +2,7 @@ package com.example.scrapbook.screens.common
 
 import android.arch.lifecycle.ViewModel
 import android.arch.lifecycle.ViewModelProvider
-import com.example.scrapbook.screens.InstagramApp
+import com.example.scrapbook.screens.ScrapbookApp
 import com.example.scrapbook.screens.addfriends.AddFriendsViewModel
 import com.example.scrapbook.screens.comments.CommentsViewModel
 import com.example.scrapbook.screens.editprofile.EditProfileViewModel
@@ -17,7 +17,7 @@ import com.example.scrapbook.screens.share.ShareViewModel
 import com.google.android.gms.tasks.OnFailureListener
 
 @Suppress("UNCHECKED_CAST")
-class ViewModelFactory(private val app: InstagramApp,
+class ViewModelFactory(private val app: ScrapbookApp,
                        private val commonViewModel: CommonViewModel,
                        private val onFailureListener: OnFailureListener) : ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
