@@ -24,7 +24,7 @@
                     tools:text="user.name"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" android:layout_marginStart="52dp"
+                    app:layout_constraintTop_toTopOf="parent" android:layout_marginStart="36dp"
             />
 
             <ImageView
@@ -133,7 +133,7 @@
             android:layout_marginEnd="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/profile_image"
-            android:layout_marginStart="60dp" app:layout_constraintHorizontal_bias="0.883"
+            android:layout_marginStart="60dp" app:layout_constraintHorizontal_bias="0.766"
             android:layout_marginBottom="32dp" app:layout_constraintBottom_toTopOf="@+id/images_recycler"/>
 
     <android.support.v7.widget.RecyclerView
@@ -144,8 +144,7 @@
             android:background="@drawable/top_border_grey"
             app:layout_constraintTop_toBottomOf="@id/profile_image"
             app:layout_constraintBottom_toTopOf="@id/bottom_navigation_view"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp">
+    >
 
     </android.support.v7.widget.RecyclerView>
 
