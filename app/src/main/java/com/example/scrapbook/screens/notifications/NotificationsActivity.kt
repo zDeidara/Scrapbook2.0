@@ -28,7 +28,7 @@ class NotificationsActivity : BaseActivity() {
             viewModel.init(uid)
             viewModel.notifications.observe(this, Observer {
                 it?.let {
-                    mAdapter.updateNotifications(it)
+                    mAdapter.updateNotifications(it.sortedBy { it.timestampDate() }.reversed())
                     viewModel.setNotificationsRead(it)
                 }
             })

@@ -32,7 +32,7 @@ class SearchActivity : BaseActivity(), TextWatcher {
 
             mViewModel = initViewModel()
             mViewModel.posts.observe(this, Observer{it?.let{posts ->
-                mAdapter.updateImages(posts.map { it.image })
+                mAdapter.updateImages(posts.map { Pair("image key", it.image) })
             }})
 
             search_input.addTextChangedListener(this)

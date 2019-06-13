@@ -35,6 +35,8 @@
                         app:layout_constraintStart_toEndOf="@id/back_image"
                         app:layout_constraintTop_toTopOf="parent" android:layout_marginStart="108dp"/>
 
+
+
                 <ImageView
                     android:id="@+id/save_image"
                     style="@style/icon"
@@ -47,7 +49,16 @@
 
         </android.support.v7.widget.Toolbar>
 
-        <ImageView
+        <ProgressBar android:id="@+id/progressBar"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     app:layout_constraintTop_toTopOf="@+id/profile_image"
+                     app:layout_constraintEnd_toEndOf="@+id/profile_image"
+                     app:layout_constraintStart_toStartOf="@+id/profile_image"
+                     android:layout_marginBottom="8dp"
+                     app:layout_constraintBottom_toTopOf="@+id/change_photo_text"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profile_image"
             android:layout_width="100dp"
             android:layout_height="100dp"

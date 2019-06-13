@@ -7,13 +7,14 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import com.example.scrapbook.R
 
-class ImagesAdapter : RecyclerView.Adapter<ImagesAdapter.ViewHolder>() {
+class ImagesAdapter() : RecyclerView.Adapter<ImagesAdapter.ViewHolder>() {
 
     class ViewHolder(val image: ImageView) : RecyclerView.ViewHolder(image)
 
-    private var images = listOf<String>()
+    private var images = listOf<Pair<String, String>>()
 
-    fun updateImages(newImages: List<String>) {
+    // todo change to List<Model>
+    fun updateImages(newImages: List<Pair<String, String>>) {
         val diffResult = DiffUtil.calculateDiff(SimpleCallback(images, newImages) { it })
         this.images = newImages
         diffResult.dispatchUpdatesTo(this)
@@ -21,12 +22,13 @@ class ImagesAdapter : RecyclerView.Adapter<ImagesAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val image = LayoutInflater.from(parent.context)
-                .inflate(R.layout.image_item, parent, false) as ImageView
+            .inflate(R.layout.image_item, parent, false) as ImageView
         return ViewHolder(image)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.image.loadImage(images[position])
+        holder.image.loadImage(images[position].second)
+
     }
 
     override fun getItemCount(): Int = images.size

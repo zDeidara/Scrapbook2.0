@@ -45,7 +45,9 @@ class EditProfileActivity : BaseActivity(), PasswordDialog.Listener {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == mCamera.REQUEST_CODE && resultCode == RESULT_OK) {
-            mViewModel.uploadAndSetUserPhoto(mCamera.imageUri!!)
+            mViewModel.uploadAndSetUserPhoto(mCamera.imageUri!!, callback = { progress ->
+                progressBar.progress = progress
+            })
         }
     }
 
@@ -65,22 +67,22 @@ class EditProfileActivity : BaseActivity(), PasswordDialog.Listener {
 
     private fun readInputs(): User {
         return User(
-                name = name_input.text.toString(),
-                username = username_input.text.toString(),
-                email = email_input.text.toString(),
-                website = website_input.text.toStringOrNull(),
-                bio = bio_input.text.toStringOrNull(),
-                phone = phone_input.text.toString().toLongOrNull()
+            name = name_input.text.toString(),
+            username = username_input.text.toString(),
+            email = email_input.text.toString(),
+            website = website_input.text.toStringOrNull(),
+            bio = bio_input.text.toStringOrNull(),
+            phone = phone_input.text.toString().toLongOrNull()
         )
     }
 
     override fun onPasswordConfirm(password: String) {
         if (password.isNotEmpty()) {
             mViewModel.updateEmail(
-                    currentEmail = mUser.email,
-                    newEmail = mPendingUser.email,
-                    password = password)
-                    .addOnSuccessListener { updateUser(mPendingUser) }
+                currentEmail = mUser.email,
+                newEmail = mPendingUser.email,
+                password = password)
+                .addOnSuccessListener { updateUser(mPendingUser) }
         } else {
             showToast(getString(R.string.you_should_enter_your_password))
         }
@@ -88,19 +90,19 @@ class EditProfileActivity : BaseActivity(), PasswordDialog.Listener {
 
     private fun updateUser(user: User) {
         mViewModel.updateUserProfile(currentUser = mUser, newUser = user)
-                .addOnSuccessListener {
-                    showToast(getString(R.string.profile_saved))
-                    finish()
-                }
+            .addOnSuccessListener {
+                showToast(getString(R.string.profile_saved))
+                finish()
+            }
     }
 
     private fun validate(user: User): String? =
-            when {
-                user.name.isEmpty() -> getString(R.string.please_enter_name)
-                user.username.isEmpty() -> getString(R.string.please_enter_username)
-                user.email.isEmpty() -> getString(R.string.please_enter_email)
-                else -> null
-            }
+        when {
+            user.name.isEmpty() -> getString(R.string.please_enter_name)
+            user.username.isEmpty() -> getString(R.string.please_enter_username)
+            user.email.isEmpty() -> getString(R.string.please_enter_email)
+            else -> null
+        }
 
     companion object {
         const val TAG = "EditProfileActivity"

@@ -9,7 +9,7 @@ import com.google.android.gms.tasks.OnFailureListener
 class ProfileViewModel(private val usersRepo: UsersRepository, onFailureListener: OnFailureListener)
     : BaseViewModel(onFailureListener) {
     val user = usersRepo.getUser()
-    lateinit var images: LiveData<List<String>>
+    lateinit var images: LiveData<Pair<List<String?>?, List<String?>?>>
 
     fun init(uid: String) {
         if (!this::images.isInitialized) {
