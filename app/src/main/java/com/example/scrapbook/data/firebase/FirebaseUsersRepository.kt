@@ -60,7 +60,7 @@ class FirebaseUsersRepository : UsersRepository {
                 item.add(
                     Model(
                         data.key ?: "",
-                        it.getValue(String::class.java) ?: ""
+                        data.getValue(String::class.java) ?: ""
                     )
                 )
             }
