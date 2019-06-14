@@ -11,14 +11,15 @@
             style="@style/icon"
             android:src="@drawable/person"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="8dp"
-            android:layout_marginStart="124dp"/>
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="12dp"
+            android:layout_marginStart="124dp" app:layout_constraintEnd_toEndOf="@+id/more_image"
+            android:layout_marginEnd="8dp" app:layout_constraintHorizontal_bias="0.122"/>
 
     <TextView
             android:id="@+id/username_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="willsmith"
+            tools:text="User"
             android:textColor="@color/black"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@id/user_photo_image"
@@ -31,7 +32,8 @@
             android:src="@drawable/ic_more"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/user_photo_image"
-            app:layout_constraintBottom_toBottomOf="@id/user_photo_image"/>
+            app:layout_constraintBottom_toBottomOf="@id/user_photo_image" android:layout_marginEnd="4dp"
+            app:layout_constraintVertical_bias="0.0"/>
 
     <ImageView
             android:id="@+id/post_image"
@@ -84,6 +86,30 @@
             app:layout_constraintTop_toBottomOf="@id/likes_text"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            tools:text="willsmith This is a caption for the post. It's actually a very long caption."/>
+            tools:text="User description"/>
+
+    <ImageView android:layout_width="67dp"
+               android:layout_height="66dp"
+               android:background="@drawable/left_top"
+               app:layout_constraintStart_toStartOf="@+id/post_image"
+               app:layout_constraintTop_toTopOf="@+id/post_image"/>
+
+    <ImageView android:layout_width="67dp"
+               android:layout_height="66dp"
+               android:background="@drawable/left_bottom"
+               android:id="@+id/imageView" app:layout_constraintStart_toStartOf="@+id/post_image"
+               app:layout_constraintBottom_toBottomOf="@+id/post_image"/>
+
+    <ImageView android:layout_width="67dp"
+               android:layout_height="66dp"
+               android:background="@drawable/right_top"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintTop_toTopOf="@+id/post_image"/>
+
+    <ImageView android:layout_width="67dp"
+               android:layout_height="66dp"
+               android:background="@drawable/right_bottom"
+               app:layout_constraintBottom_toBottomOf="@+id/post_image"
+               app:layout_constraintEnd_toEndOf="@+id/post_image"/>
 
 </android.support.constraint.ConstraintLayout>

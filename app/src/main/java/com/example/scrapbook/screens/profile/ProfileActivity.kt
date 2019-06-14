@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.support.v7.widget.GridLayoutManager
 import android.util.Log
 import com.example.scrapbook.R
+import com.example.scrapbook.data.firebase.FirebaseUsersRepository
 import com.example.scrapbook.screens.addfriends.AddFriendsActivity
 import com.example.scrapbook.screens.common.*
 import com.example.scrapbook.screens.editprofile.EditProfileActivity
@@ -50,12 +51,8 @@ class ProfileActivity : BaseActivity() {
             })
             viewModel.images.observe(this, Observer {
                 it?.let { images ->
-                    val items = arrayListOf<Pair<String, String>>()
-                    images.second?.forEachIndexed { i, p ->
-                        items.add(Pair(images.first?.get(i) ?: "", p ?: ""))
-                    }
-                    mAdapter.updateImages(items)
-                    posts_count_text.text = items.size.toString()
+                    mAdapter.updateImages(images)
+                    posts_count_text.text = images.size.toString()
                 }
             })
         }

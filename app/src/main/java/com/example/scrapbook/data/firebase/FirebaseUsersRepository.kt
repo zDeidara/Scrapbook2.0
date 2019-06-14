@@ -48,24 +48,23 @@ class FirebaseUsersRepository : UsersRepository {
             Tasks.forResult(signInMethods.isNotEmpty())
         }
 
-    // todo change pair
     data class Model(
         val id: String,
         val content: String
     )
 
-    override fun getImages(uid: String): LiveData< Pair<List<String?>?, List<String?>?> > =
+    override fun getImages(uid: String): LiveData<List<Model>> =
         FirebaseLiveData(database.child("images").child(uid)).map {
             val item: ArrayList<Model> = arrayListOf()
             it.children.forEach { data ->
-                item.add(Model(
-                    data.key ?: "",
-                    it.getValue(String::class.java) ?: "" // todo error
-                ))
+                item.add(
+                    Model(
+                        data.key ?: "",
+                        it.getValue(String::class.java) ?: ""
+                    )
+                )
             }
-            // todo kostil
-            Pair(it.children.map { it.key },
-                it.children.map { it.getValue(String::class.java)!! })
+            return@map item
         }
 
     override fun getUsers(): LiveData<List<User>> =

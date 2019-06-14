@@ -8,6 +8,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import com.example.scrapbook.R
+import com.example.scrapbook.data.firebase.FirebaseUsersRepository
 import com.example.scrapbook.screens.common.BaseActivity
 import com.example.scrapbook.screens.common.ImagesAdapter
 import com.example.scrapbook.screens.common.setupAuthGuard
@@ -32,7 +33,7 @@ class SearchActivity : BaseActivity(), TextWatcher {
 
             mViewModel = initViewModel()
             mViewModel.posts.observe(this, Observer{it?.let{posts ->
-                mAdapter.updateImages(posts.map { Pair("image key", it.image) })
+                mAdapter.updateImages(posts.map { FirebaseUsersRepository.Model(it.id, it.image) })
             }})
 
             search_input.addTextChangedListener(this)

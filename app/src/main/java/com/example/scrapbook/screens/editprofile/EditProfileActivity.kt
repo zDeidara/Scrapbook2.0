@@ -48,12 +48,17 @@ class EditProfileActivity : BaseActivity(), PasswordDialog.Listener {
         if (requestCode == mCamera.REQUEST_CODE && resultCode == RESULT_OK) {
             mViewModel.uploadAndSetUserPhoto(mCamera.imageUri!!, callback = { progress ->
                 progressBar.progress = progress
+
+                if (progressBar.progress == 0) {
+                    progressBar.visibility = View.GONE
+                } else {
+                    progressBar.visibility = View.VISIBLE
+                }
+                if (progressBar.progress == 100){
+                    progressBar.visibility = View.GONE
+                }
             })
-            if (progressBar.progress == 0) {
-                progressBar.visibility = View.GONE
-            } else {
-                progressBar.visibility = View.VISIBLE
-            }
+
         }
     }
 

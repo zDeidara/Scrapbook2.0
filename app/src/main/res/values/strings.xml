@@ -19,6 +19,9 @@
     <string name="following">following</string>
     <string name="settings">Settings</string>
     <string name="sign_out">Sign Out</string>
+    <string name="info">Info</string>
+    <string name="reference">Reference</string>
+    <string name="account">Account</string>
     <string name="share_to">Share to</string>
     <string name="share">Share</string>
     <string name="enter_a_caption_here">Enter a caption here…</string>
