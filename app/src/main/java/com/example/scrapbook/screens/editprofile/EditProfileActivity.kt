@@ -3,6 +3,7 @@ package com.example.scrapbook.screens.editprofile
 import android.arch.lifecycle.Observer
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import com.example.scrapbook.R
 import com.example.scrapbook.models.User
 import com.example.scrapbook.screens.common.*
@@ -48,6 +49,11 @@ class EditProfileActivity : BaseActivity(), PasswordDialog.Listener {
             mViewModel.uploadAndSetUserPhoto(mCamera.imageUri!!, callback = { progress ->
                 progressBar.progress = progress
             })
+            if (progressBar.progress == 0) {
+                progressBar.visibility = View.GONE
+            } else {
+                progressBar.visibility = View.VISIBLE
+            }
         }
     }
 

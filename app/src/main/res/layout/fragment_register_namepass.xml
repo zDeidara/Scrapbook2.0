@@ -1,40 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+                                             android:layout_height="match_parent"
+                                             android:background="@color/beige">
 
     <TextView
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/enter_full_name_and_password"
-        android:textSize="17sp"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="100dp"/>
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/enter_full_name_and_password"
+            android:textSize="17sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="100dp"/>
+
+    <ImageView android:layout_width="94dp"
+               android:layout_height="86dp"
+               android:background="@drawable/left_top" tools:layout_editor_absoluteY="-6dp"
+               tools:layout_editor_absoluteX="-11dp"/>
+
+    <ImageView android:layout_width="94dp"
+               android:layout_height="86dp"
+               android:background="@drawable/left_bottom" tools:layout_editor_absoluteY="658dp"
+               tools:layout_editor_absoluteX="-10dp" android:id="@+id/imageView"/>
+
+    <ImageView android:layout_width="94dp"
+               android:layout_height="86dp"
+               android:background="@drawable/right_top" tools:layout_editor_absoluteY="-7dp"
+               tools:layout_editor_absoluteX="332dp"/>
+
+    <ImageView android:layout_width="94dp"
+               android:layout_height="86dp"
+               android:background="@drawable/right_bottom" tools:layout_editor_absoluteY="652dp"
+               tools:layout_editor_absoluteX="326dp"/>
 
     <EditText
-        android:id="@+id/full_name_input"
-        style="@style/big_input"
-        android:inputType="textPersonName"
-        android:hint="@string/full_name"
-        app:layout_constraintTop_toBottomOf="@id/title"/>
+            android:id="@+id/full_name_input"
+            style="@style/big_input"
+            android:inputType="textPersonName"
+            android:hint="@string/full_name"
+            app:layout_constraintTop_toBottomOf="@id/title"/>
 
     <EditText
-        android:id="@+id/password_input"
-        style="@style/big_input"
-        android:inputType="textPassword"
-        android:hint="@string/password"
-        app:layout_constraintTop_toBottomOf="@id/full_name_input"/>
+            android:id="@+id/password_input"
+            style="@style/big_input"
+            android:inputType="textPassword"
+            android:hint="@string/password"
+            app:layout_constraintTop_toBottomOf="@id/full_name_input"/>
 
     <Button
-        android:id="@+id/register_btn"
-        android:text="@string/register"
-        style="@style/big_btn"
-        app:layout_constraintTop_toBottomOf="@id/password_input"/>
+            android:id="@+id/register_btn"
+            android:text="@string/register"
+            style="@style/big_btn"
+            app:layout_constraintTop_toBottomOf="@id/password_input"/>
 
 </android.support.constraint.ConstraintLayout>

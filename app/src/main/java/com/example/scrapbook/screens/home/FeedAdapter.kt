@@ -67,6 +67,7 @@ class FeedAdapter(private val listener: Listener)
                     else R.drawable.ic_likes_border)
             comment_image.setOnClickListener { listener.openComments(post.id) }
             listener.loadLikes(post.id, position)
+            more_image.setOnClickListener {  }
         }
     }
 
@@ -76,5 +77,9 @@ class FeedAdapter(private val listener: Listener)
         val diffResult = DiffUtil.calculateDiff(SimpleCallback(this.posts, newPosts) { it.id })
         this.posts = newPosts
         diffResult.dispatchUpdatesTo(this)
+    }
+
+    fun editPosts(newPosts: List<FeedPost>){
+
     }
 }

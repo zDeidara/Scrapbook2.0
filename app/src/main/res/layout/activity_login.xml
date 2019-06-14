@@ -10,7 +10,28 @@
             android:id="@+id/frameLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".screens.login.LoginActivity">
+            tools:context=".screens.login.LoginActivity"
+            android:background="@color/beige">
+
+        <ImageView android:layout_width="94dp"
+                   android:layout_height="86dp"
+                   android:background="@drawable/left_top" tools:layout_editor_absoluteY="-6dp"
+                   tools:layout_editor_absoluteX="-11dp"/>
+
+        <ImageView android:layout_width="94dp"
+                   android:layout_height="86dp"
+                   android:background="@drawable/left_bottom" tools:layout_editor_absoluteY="658dp"
+                   tools:layout_editor_absoluteX="-10dp" android:id="@+id/imageView"/>
+
+        <ImageView android:layout_width="94dp"
+                   android:layout_height="86dp"
+                   android:background="@drawable/right_top" tools:layout_editor_absoluteY="-7dp"
+                   tools:layout_editor_absoluteX="334dp"/>
+
+        <ImageView android:layout_width="94dp"
+                   android:layout_height="86dp"
+                   android:background="@drawable/right_bottom" tools:layout_editor_absoluteY="655dp"
+                   tools:layout_editor_absoluteX="327dp"/>
 
         <ImageView
                 android:id="@+id/instagram_image"
@@ -45,12 +66,11 @@
 
         <TextView
                 android:id="@+id/create_account_text"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/toolbar_height"
-                android:background="@drawable/top_border_grey"
+                android:layout_width="216dp"
+                android:layout_height="101dp"
                 android:gravity="center"
                 android:text="@string/create_account"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                app:layout_constraintBottom_toBottomOf="parent" tools:layout_editor_absoluteX="99dp"/>
 
     </android.support.constraint.ConstraintLayout>
 
